@@ -2,7 +2,7 @@
   "unet": {
     "class_type": "HyperFlowInt8Loader",
     "inputs": {
-      "unet_name": "minimax_h3_ref2va_hyperflow_flash_int8_convrot_comfy.safetensors"
+      "unet_name": "minimax_h3_fl2va_hyperflow_flash_int8_convrot_comfy.safetensors"
     }
   },
   "sigmas": {
@@ -36,13 +36,8 @@
     }
   },
   "conditioning": {
-    "class_type": "MiniMaxH3ReferenceToVideo",
+    "class_type": "MiniMaxH3ImageToVideo",
     "inputs": {
-      "prompt": "A chef in a busy restaurant kitchen tosses vegetables in a flaming wok, slides them onto a plate, and calls out <d>[English] Order up, table six!</d> Sizzling, clattering pans.",
-      "width": 960,
-      "height": 544,
-      "length": 124,
-      "ref_image_size": "match",
       "clip": [
         "clip",
         0
@@ -51,10 +46,10 @@
         "video_vae",
         0
       ],
-      "audio_vae": [
-        "audio_vae",
-        0
-      ]
+      "prompt": "A chef in a busy restaurant kitchen tosses vegetables in a flaming wok, slides them onto a plate, and calls out <d>[English] Order up, table six!</d> Sizzling, clattering pans.",
+      "width": 960,
+      "height": 544,
+      "length": 124
     }
   },
   "noise": {

@@ -1,6 +1,6 @@
 # ComfyUI-Studio-HyperFlow
 
-A ComfyUI loader for [HyperFlow H3 Flash](https://huggingface.co/VideoRebirthAI/hyperflow-h3-flash) in ComfyUI's native int8 ConvRot layout, the file at [nodevorg/studio-models-h3](https://huggingface.co/nodevorg/studio-models-h3). [studio.no.dev](https://studio.no.dev) uses it for its HyperFlow presets.
+A ComfyUI loader for [HyperFlow H3 Flash](https://huggingface.co/VideoRebirthAI/hyperflow-h3-flash) in ComfyUI's native int8 ConvRot layout, the files at [nodevorg/studio-models-h3](https://huggingface.co/nodevorg/studio-models-h3). [studio.no.dev](https://studio.no.dev) uses it for its HyperFlow presets.
 
 Video Rebirth's [ComfyUI-HyperFlow-Flash](https://github.com/Video-Rebirth/ComfyUI-HyperFlow-Flash) loads their GGUF files. This pack loads the int8 file instead, so ComfyUI runs the dense blocks through its own int8 matmuls. HyperFlow drops one block from H3, factors 19 blocks into bf16 low-rank pairs and adds a second time embedder for each step's endpoint. The loader builds the dense model with ComfyUI's H3 loader, then swaps in the low-rank blocks and the endpoint embedder.
 
@@ -22,9 +22,10 @@ Tested with ComfyUI v0.44.0 and ComfyUI-HyperFlow-Flash at `20a22ab`.
 ## Models
 
 ```sh
-hf download nodevorg/studio-models-h3 \
-  diffusion_models/minimax_h3_ref2va_hyperflow_flash_int8_convrot_comfy.safetensors --local-dir ComfyUI/models
+hf download nodevorg/studio-models-h3 --include "diffusion_models/*" --local-dir ComfyUI/models
 ```
+
+There are two towers. `minimax_h3_fl2va_...` does text to video and image to video from a first frame, or first and last frames, through `MiniMaxH3ImageToVideo`. It draws animals noticeably better than ref2va in text to video. `minimax_h3_ref2va_...` does video from reference images and audio through `MiniMaxH3ReferenceToVideo`.
 
 The text encoder and VAEs are the stock MiniMax H3 files from [Comfy-Org/MiniMax-H3](https://huggingface.co/Comfy-Org/MiniMax-H3). The example uses `text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors`, `vae/minimax_h3_video_vae_fp16.safetensors` and `vae/minimax_h3_audio_vae_fp32.safetensors`.
 
@@ -37,21 +38,22 @@ Sample with `SamplerCustomAdvanced`, `BasicGuider` and `euler`. HyperFlow is dis
 
 ## Example workflow
 
-`example_workflows/hyperflow_h3_t2va_6step_api.json` is a 6-step text to video+audio graph at 960x544 with 124 frames, seed 42 and a line of dialogue. It's in API format, so drop it on the canvas or post it to `/prompt`. For reference to video, add images or audio to the `MiniMaxH3ReferenceToVideo` node.
+`example_workflows/hyperflow_h3_t2va_6step_api.json` is a 6-step text to video+audio graph on the fl2va tower at 960x544 with 124 frames, seed 42 and a line of dialogue. It's in API format, so drop it on the canvas or post it to `/prompt`. For image to video, connect a `first_frame` (and optionally a `last_frame`) to `MiniMaxH3ImageToVideo`. For references, load the ref2va file and use `MiniMaxH3ReferenceToVideo`.
 
 ## Converting it yourself
 
-`tools/hyperflow_convert.py` writes the int8 file from Video Rebirth's release. It checks every tensor against their Q8_0 GGUF of the same weights and stops on any mismatch. It needs `torch`, `safetensors`, `numpy` and `gguf`, which a ComfyUI environment with ComfyUI-HyperFlow-Flash has.
+`tools/hyperflow_convert.py` writes either int8 file from Video Rebirth's release. It checks every tensor against their Q8_0 GGUF of the same weights and stops on any mismatch. It needs `torch`, `safetensors`, `numpy` and `gguf`, which a ComfyUI environment with ComfyUI-HyperFlow-Flash has.
 
 ```sh
-hf download VideoRebirthAI/hyperflow-h3-flash --include "ref2va_int8_convrot/*" \
-  ref2va_gguf/minimax_h3_ref2va_hyperflow_flash_14b-Q8_0.gguf --local-dir src
-python tools/hyperflow_convert.py src/ref2va_int8_convrot \
-  src/ref2va_gguf/minimax_h3_ref2va_hyperflow_flash_14b-Q8_0.gguf \
-  minimax_h3_ref2va_hyperflow_flash_int8_convrot_comfy.safetensors
+T=fl2va  # or ref2va
+hf download VideoRebirthAI/hyperflow-h3-flash --include "${T}_int8_convrot/*" \
+  --include "${T}_gguf/minimax_h3_${T}_hyperflow_flash_14b-Q8_0.gguf" --local-dir src
+python tools/hyperflow_convert.py src/${T}_int8_convrot \
+  src/${T}_gguf/minimax_h3_${T}_hyperflow_flash_14b-Q8_0.gguf \
+  minimax_h3_${T}_hyperflow_flash_int8_convrot_comfy.safetensors
 ```
 
-The int8 values and scales copy over unchanged, since both layouts use the same Hadamard rotation and per-row scales. The converter renames tensors, concatenates q, k and v, renumbers the blocks after the dropped one, puts the SwiGLU gate half first, and zero-pads the low-rank ranks to multiples of 256.
+The int8 values and scales copy over unchanged, since both layouts use the same Hadamard rotation and per-row scales. The converter renames tensors, concatenates q, k and v, renumbers the blocks after the dropped ones, puts the SwiGLU gate half first, and zero-pads the low-rank ranks to multiples of 256.
 
 ## License
 
