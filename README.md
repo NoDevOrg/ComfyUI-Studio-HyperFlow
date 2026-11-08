@@ -34,11 +34,11 @@ The text encoder and VAEs are the stock MiniMax H3 files from [Comfy-Org/MiniMax
 - **HyperFlow Int8 Loader** (`HyperFlowInt8Loader`) lists the `diffusion_models` files with `hyperflow` in the name and returns a MODEL.
 - **HyperFlowSigmas** comes from ComfyUI-HyperFlow-Flash. Feed it the model and 6 or 8 steps.
 
-Sample with `SamplerCustomAdvanced`, `BasicGuider` and `euler`. HyperFlow is distilled for few steps, so leave PDD out.
+Sample with `SamplerCustomAdvanced` and `BasicGuider`, using `euler` or `lcm`. HyperFlow is distilled for few steps, so leave PDD out.
 
 ## Example workflow
 
-`example_workflows/hyperflow_h3_t2va_6step_api.json` is a 6-step text to video+audio graph on the fl2va tower at 960x544 with 124 frames, seed 42 and a line of dialogue. It's in API format, so drop it on the canvas or post it to `/prompt`. For image to video, connect a `first_frame` (and optionally a `last_frame`) to `MiniMaxH3ImageToVideo`. For references, load the ref2va file and use `MiniMaxH3ReferenceToVideo`.
+`example_workflows/hyperflow_h3_t2va_6step_lcm.json` wraps the graph in a "Hyperflow H3" subgraph on the ref2va tower: `lcm` at 6 steps, 544x960 portrait, 362 frames (15 s), a three-shot prompt with two lines of dialogue. ref2va handles plain text to video fine, and the subgraph exposes its reference image and audio sockets, so you can attach references or swap the model file without rewiring. For image to video, load the fl2va file and condition with `MiniMaxH3ImageToVideo` and a `first_frame`, plus an optional `last_frame`.
 
 ## Converting it yourself
 

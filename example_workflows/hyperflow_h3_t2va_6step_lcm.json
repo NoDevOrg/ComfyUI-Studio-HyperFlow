@@ -1,0 +1,1659 @@
+{
+  "id": "7967f13d-9700-43b0-9d49-b40076d592ae",
+  "revision": 0,
+  "last_node_id": 7,
+  "last_link_id": 49,
+  "nodes": [
+    {
+      "id": "save_video",
+      "type": "SaveVideo",
+      "pos": [
+        1858.5942232105317,
+        141.4423995155758
+      ],
+      "size": [
+        376.0223455612622,
+        746.5671881346445
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "link": 18
+        }
+      ],
+      "outputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveVideo"
+      },
+      "widgets_values": [
+        "video/hyperflow_h3",
+        "mp4",
+        "auto",
+        "auto"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "video/hyperflow_h3",
+        "format": "mp4",
+        "format.codec": "auto",
+        "codec": "auto"
+      }
+    },
+    {
+      "id": 1,
+      "type": "114e4f55-3d5c-49ba-bfd4-4ee415384b5c",
+      "pos": [
+        1034.5395832877782,
+        145.18774294073552
+      ],
+      "size": [
+        780.3038102056771,
+        742.913476987454
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "ref_images.ref_image_0",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "ref_images.ref_image_1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "ref_images.ref_image_2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "ref_images.ref_image_3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "ref_images.ref_image_4",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "ref_images.ref_image_5",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "ref_images.ref_image_6",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "ref_images.ref_image_7",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "ref_images.ref_image_8",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "ref_audios.ref_audio_0",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "ref_audios.ref_audio_1",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "ref_audios.ref_audio_2",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "VIDEO",
+          "type": "VIDEO",
+          "links": [
+            18
+          ]
+        }
+      ],
+      "title": "Hyperflow H3",
+      "properties": {
+        "previewExposures": []
+      },
+      "widgets_values": [
+        "minimax_h3_ref2va_hyperflow_flash_int8_convrot_comfy.safetensors",
+        "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+        "minimax_h3_video_vae_fp16.safetensors",
+        "minimax_h3_audio_vae_fp32.safetensors",
+        1060735949623645,
+        "lcm",
+        6,
+        544,
+        960,
+        362,
+        "integrated_multimodal_description: [Shot 1] Live-action, cinematic, a level medium shot frames a young woman in her early twenties seated on a velvet bench in the center of a trophy room at night. She has long platinum-blonde hair drawn into a loose braid swept across the crown of her head, fair pale skin, light green-grey eyes, and wears a narrow Slytherin uniform: a white collared shirt, a green-and-silver striped tie, an open full-length house robe of deep green and black, a dark waistcoat, a black pleated skirt, sheer black tights and black loafers. Rows of glass cabinets line the stone wall, glowing with the faint green-gold of trophies, while a single candle on the bench casts warm light on her skin against the cool glass, with fine film grain throughout. A small black Hungarian Horntail hatchling the size of a large cat, with tiny wings half-fluttering and dark scales, sits perched calmly on her left shoulder, its long head turned outward, its forked tongue occasionally flicking the air, its claws lightly gripping the fabric of her robe, the two of them the only figures in the room. One of her hands rests on the bench and the other is relaxed at her side, her chin lifted. The young woman, with a soft, cool-tempered voice, a light British accent, and an unhurried, sardonic delivery (S1), says: <d>[English] Hyperflow is now here.</d> The hatchling’s tail curls lightly around her upper arm to steady itself as its wings give a small beat. The camera pushes in with small amplitude at slow speed. [Shot 2] At 00:04.500, the shot cuts to a close-up of the small black Hungarian Horntail hatchling on the shoulder of the young woman, its dark scales catching the candlelight, its tiny wings half-spread, its head tilted as it looks forward, nostrils flaring gently, the tip of its tail visible against the green of her robe. The candlelight glints off its scales and the edge of her braid. The camera holds a static shot on the dragon. [Shot 3] At 00:07.500, the shot cuts to a close-up of the face of the young woman, her eyes half-lidded and cool, her jaw relaxed, the tip of the crown braid falling across her face, her free hand still resting near her thigh, her fingers still. A small smirk tugs at the corner of her mouth, one eyebrow lifts a fraction, and the skin at the outer corner of her eye tightens in a brief, private micro-expression before her features settle again. In the same soft, cool timbre, her voice lower and drier, she says: <d>[English] What are you going to do now?</d> The dragon remains settled on her shoulder, undisturbed, while the green-gold of the trophies stays steady behind her. The camera holds a static shot.\n\noverall_soundscape: Night quiet fills the trophy room with a candle flicker and the faint hush of the glass cabinets. A soft rustle of the dragon’s wings as it shifts, the light scrape of its claws on fabric, and its tail sliding against the robe carry through. Her breathing stays even and measured throughout, quiet after the last word.\n\nnon_diegetic_music: A single low cello note at a very slow tempo holds under the first shot only, cut before the close-ups."
+      ],
+      "widgets_values_named": {
+        "unet_name": "minimax_h3_ref2va_hyperflow_flash_int8_convrot_comfy.safetensors",
+        "clip_name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+        "vae_name": "minimax_h3_video_vae_fp16.safetensors",
+        "vae_name_1": "minimax_h3_audio_vae_fp32.safetensors",
+        "noise_seed": 1060735949623645,
+        "sampler_name": "lcm",
+        "steps": 6,
+        "width": 544,
+        "height": 960,
+        "length": 362,
+        "prompt": "integrated_multimodal_description: [Shot 1] Live-action, cinematic, a level medium shot frames a young woman in her early twenties seated on a velvet bench in the center of a trophy room at night. She has long platinum-blonde hair drawn into a loose braid swept across the crown of her head, fair pale skin, light green-grey eyes, and wears a narrow Slytherin uniform: a white collared shirt, a green-and-silver striped tie, an open full-length house robe of deep green and black, a dark waistcoat, a black pleated skirt, sheer black tights and black loafers. Rows of glass cabinets line the stone wall, glowing with the faint green-gold of trophies, while a single candle on the bench casts warm light on her skin against the cool glass, with fine film grain throughout. A small black Hungarian Horntail hatchling the size of a large cat, with tiny wings half-fluttering and dark scales, sits perched calmly on her left shoulder, its long head turned outward, its forked tongue occasionally flicking the air, its claws lightly gripping the fabric of her robe, the two of them the only figures in the room. One of her hands rests on the bench and the other is relaxed at her side, her chin lifted. The young woman, with a soft, cool-tempered voice, a light British accent, and an unhurried, sardonic delivery (S1), says: <d>[English] Hyperflow is now here.</d> The hatchling’s tail curls lightly around her upper arm to steady itself as its wings give a small beat. The camera pushes in with small amplitude at slow speed. [Shot 2] At 00:04.500, the shot cuts to a close-up of the small black Hungarian Horntail hatchling on the shoulder of the young woman, its dark scales catching the candlelight, its tiny wings half-spread, its head tilted as it looks forward, nostrils flaring gently, the tip of its tail visible against the green of her robe. The candlelight glints off its scales and the edge of her braid. The camera holds a static shot on the dragon. [Shot 3] At 00:07.500, the shot cuts to a close-up of the face of the young woman, her eyes half-lidded and cool, her jaw relaxed, the tip of the crown braid falling across her face, her free hand still resting near her thigh, her fingers still. A small smirk tugs at the corner of her mouth, one eyebrow lifts a fraction, and the skin at the outer corner of her eye tightens in a brief, private micro-expression before her features settle again. In the same soft, cool timbre, her voice lower and drier, she says: <d>[English] What are you going to do now?</d> The dragon remains settled on her shoulder, undisturbed, while the green-gold of the trophies stays steady behind her. The camera holds a static shot.\n\noverall_soundscape: Night quiet fills the trophy room with a candle flicker and the faint hush of the glass cabinets. A soft rustle of the dragon’s wings as it shifts, the light scrape of its claws on fabric, and its tail sliding against the robe carry through. Her breathing stays even and measured throughout, quiet after the last word.\n\nnon_diegetic_music: A single low cello note at a very slow tempo holds under the first shot only, cut before the close-ups."
+      }
+    }
+  ],
+  "links": [
+    [
+      18,
+      1,
+      0,
+      "save_video",
+      0,
+      "VIDEO"
+    ]
+  ],
+  "groups": [],
+  "definitions": {
+    "subgraphs": [
+      {
+        "id": "114e4f55-3d5c-49ba-bfd4-4ee415384b5c",
+        "version": 1,
+        "state": {
+          "lastGroupId": 0,
+          "lastNodeId": 7,
+          "lastLinkId": 49,
+          "lastRerouteId": 0
+        },
+        "revision": 0,
+        "config": {},
+        "name": "Hyperflow H3",
+        "inputNode": {
+          "id": -10,
+          "bounding": [
+            -264.76073121568163,
+            603.1756403553035,
+            182.53125,
+            508.0000000000001
+          ]
+        },
+        "outputNode": {
+          "id": -20,
+          "bounding": [
+            2143.1165055855863,
+            119.62443875780974,
+            128,
+            68
+          ]
+        },
+        "inputs": [
+          {
+            "id": "e0415e6a-274d-4843-b3fb-b239e215ca8a",
+            "name": "unet_name",
+            "type": "COMBO",
+            "linkIds": [
+              19
+            ],
+            "pos": [
+              -106.22948121568163,
+              627.1756403553035
+            ]
+          },
+          {
+            "id": "3c583b70-573d-4801-a721-144fba892f47",
+            "name": "clip_name",
+            "type": "COMBO",
+            "linkIds": [
+              20
+            ],
+            "pos": [
+              -106.22948121568163,
+              647.1756403553035
+            ]
+          },
+          {
+            "id": "4ad94328-e056-46e4-a7ca-edc9e3c268bf",
+            "name": "vae_name",
+            "type": "COMBO",
+            "linkIds": [
+              21
+            ],
+            "pos": [
+              -106.22948121568163,
+              667.1756403553035
+            ]
+          },
+          {
+            "id": "601ca9e2-5b68-4637-bd39-37b550cf5d5d",
+            "name": "vae_name_1",
+            "type": "COMBO",
+            "linkIds": [
+              22
+            ],
+            "pos": [
+              -106.22948121568163,
+              687.1756403553035
+            ]
+          },
+          {
+            "id": "f848eda0-25eb-4715-a37d-8ddd9c4462eb",
+            "name": "noise_seed",
+            "type": "INT",
+            "linkIds": [
+              23
+            ],
+            "pos": [
+              -106.22948121568163,
+              707.1756403553035
+            ]
+          },
+          {
+            "id": "3c079d63-b13e-48cd-8ae3-429b607d47fc",
+            "name": "sampler_name",
+            "type": "COMBO",
+            "linkIds": [
+              24
+            ],
+            "pos": [
+              -106.22948121568163,
+              727.1756403553035
+            ]
+          },
+          {
+            "id": "af2f41a7-40b1-4ecb-b372-dedf61646f62",
+            "name": "steps",
+            "type": "INT",
+            "linkIds": [
+              25
+            ],
+            "pos": [
+              -106.22948121568163,
+              747.1756403553035
+            ]
+          },
+          {
+            "id": "1d5c2ab7-116a-401b-b822-e0da283574d4",
+            "name": "ref_images.ref_image_0",
+            "type": "IMAGE",
+            "linkIds": [
+              26
+            ],
+            "pos": [
+              -106.22948121568163,
+              767.1756403553035
+            ]
+          },
+          {
+            "id": "6c42c510-9cca-426a-a0df-8d97ba889a10",
+            "name": "ref_images.ref_image_1",
+            "type": "IMAGE",
+            "linkIds": [
+              27
+            ],
+            "pos": [
+              -106.22948121568163,
+              787.1756403553035
+            ]
+          },
+          {
+            "id": "87cff3b0-61b4-4dc3-a813-0446afa2da9b",
+            "name": "ref_images.ref_image_2",
+            "type": "IMAGE",
+            "linkIds": [
+              28
+            ],
+            "pos": [
+              -106.22948121568163,
+              807.1756403553035
+            ]
+          },
+          {
+            "id": "74f2804d-8f56-429c-bf3c-86f2e17f47bf",
+            "name": "ref_images.ref_image_3",
+            "type": "IMAGE",
+            "linkIds": [
+              29
+            ],
+            "pos": [
+              -106.22948121568163,
+              827.1756403553035
+            ]
+          },
+          {
+            "id": "2da6bc66-9870-4203-b2b2-649c1e57e4fe",
+            "name": "ref_images.ref_image_4",
+            "type": "IMAGE",
+            "linkIds": [
+              30
+            ],
+            "pos": [
+              -106.22948121568163,
+              847.1756403553035
+            ]
+          },
+          {
+            "id": "8a7ae020-6ab8-48e3-83b8-a647c6a9fe8b",
+            "name": "ref_images.ref_image_5",
+            "type": "IMAGE",
+            "linkIds": [
+              31
+            ],
+            "pos": [
+              -106.22948121568163,
+              867.1756403553035
+            ]
+          },
+          {
+            "id": "78e36226-bbf2-499f-a09a-cbf6e61cdfd7",
+            "name": "ref_images.ref_image_6",
+            "type": "IMAGE",
+            "linkIds": [
+              32
+            ],
+            "pos": [
+              -106.22948121568163,
+              887.1756403553035
+            ]
+          },
+          {
+            "id": "850792f7-49fc-418a-9e9c-00cbb9e2240a",
+            "name": "ref_images.ref_image_7",
+            "type": "IMAGE",
+            "linkIds": [
+              33
+            ],
+            "pos": [
+              -106.22948121568163,
+              907.1756403553035
+            ]
+          },
+          {
+            "id": "cbebb493-b58a-46b3-8c72-d2abd65fae1a",
+            "name": "ref_images.ref_image_8",
+            "type": "IMAGE",
+            "linkIds": [
+              34
+            ],
+            "pos": [
+              -106.22948121568163,
+              927.1756403553035
+            ]
+          },
+          {
+            "id": "05b267e1-158d-4147-94e1-677075edc9e9",
+            "name": "ref_audios.ref_audio_0",
+            "type": "AUDIO",
+            "linkIds": [
+              35
+            ],
+            "pos": [
+              -106.22948121568163,
+              947.1756403553035
+            ]
+          },
+          {
+            "id": "a1520ca3-da4a-4977-bf22-5f9bd7e1a277",
+            "name": "ref_audios.ref_audio_1",
+            "type": "AUDIO",
+            "linkIds": [
+              36
+            ],
+            "pos": [
+              -106.22948121568163,
+              967.1756403553035
+            ]
+          },
+          {
+            "id": "b10185e8-b788-4eaf-a27a-64bd36eb1a38",
+            "name": "ref_audios.ref_audio_2",
+            "type": "AUDIO",
+            "linkIds": [
+              37
+            ],
+            "pos": [
+              -106.22948121568163,
+              987.1756403553035
+            ]
+          },
+          {
+            "id": "353f6194-bed3-4c53-b0ca-f3836a8dde03",
+            "name": "width",
+            "type": "INT",
+            "linkIds": [
+              38
+            ],
+            "pos": [
+              -106.22948121568163,
+              1007.1756403553035
+            ]
+          },
+          {
+            "id": "059a0cfa-6529-443b-a85d-b5ee911b4d41",
+            "name": "height",
+            "type": "INT",
+            "linkIds": [
+              39
+            ],
+            "pos": [
+              -106.22948121568163,
+              1027.1756403553036
+            ]
+          },
+          {
+            "id": "1710dc34-893c-4828-b43d-1fce2d3a9fcb",
+            "name": "length",
+            "type": "INT",
+            "linkIds": [
+              40
+            ],
+            "pos": [
+              -106.22948121568163,
+              1047.1756403553036
+            ]
+          },
+          {
+            "id": "a816fe16-e9f3-49d0-a4b7-42274633d678",
+            "name": "prompt",
+            "type": "STRING",
+            "linkIds": [
+              41
+            ],
+            "pos": [
+              -106.22948121568163,
+              1067.1756403553036
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "id": "99e044eb-4c8c-48f4-93e9-e386c54ff3f4",
+            "name": "VIDEO",
+            "type": "VIDEO",
+            "linkIds": [
+              17
+            ],
+            "localized_name": "VIDEO",
+            "pos": [
+              2167.1165055855863,
+              143.62443875780974
+            ]
+          }
+        ],
+        "widgets": [],
+        "nodes": [
+          {
+            "id": "unet",
+            "type": "HyperFlowInt8Loader",
+            "pos": [
+              100,
+              130
+            ],
+            "size": [
+              270,
+              58
+            ],
+            "flags": {},
+            "order": 0,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "unet_name",
+                "name": "unet_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "unet_name"
+                },
+                "link": 19
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "MODEL",
+                "name": "MODEL",
+                "type": "MODEL",
+                "links": [
+                  5,
+                  45
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "HyperFlowInt8Loader"
+            },
+            "widgets_values": [
+              "minimax_h3_ref2va_hyperflow_flash_int8_convrot_comfy.safetensors"
+            ],
+            "widgets_values_named": {
+              "unet_name": "minimax_h3_ref2va_hyperflow_flash_int8_convrot_comfy.safetensors"
+            }
+          },
+          {
+            "id": "sigmas",
+            "type": "HyperFlowSigmas",
+            "pos": [
+              548.7913563923328,
+              129.51382117150882
+            ],
+            "size": [
+              210,
+              60
+            ],
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "link": 45
+              },
+              {
+                "localized_name": "steps",
+                "name": "steps",
+                "shape": 7,
+                "type": "INT",
+                "widget": {
+                  "name": "steps"
+                },
+                "link": 25
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "SIGMAS",
+                "name": "SIGMAS",
+                "type": "SIGMAS",
+                "links": [
+                  42
+                ]
+              }
+            ],
+            "title": "HyperFlowSigmas",
+            "properties": {
+              "Node name for S&R": "HyperFlowSigmas"
+            },
+            "widgets_values": [
+              6
+            ],
+            "widgets_values_named": {
+              "steps": 6
+            }
+          },
+          {
+            "id": "clip",
+            "type": "CLIPLoader",
+            "pos": [
+              100,
+              318
+            ],
+            "size": [
+              270,
+              106
+            ],
+            "flags": {},
+            "order": 2,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "clip_name",
+                "name": "clip_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "clip_name"
+                },
+                "link": 20
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "CLIP",
+                "name": "CLIP",
+                "type": "CLIP",
+                "links": [
+                  2
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "CLIPLoader"
+            },
+            "widgets_values": [
+              "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+              "minimax",
+              "default"
+            ],
+            "widgets_values_named": {
+              "clip_name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+              "type": "minimax",
+              "device": "default"
+            }
+          },
+          {
+            "id": "conditioning",
+            "type": "MiniMaxH3ReferenceToVideo",
+            "pos": [
+              470,
+              320
+            ],
+            "size": [
+              400,
+              504
+            ],
+            "flags": {},
+            "order": 3,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "clip",
+                "name": "clip",
+                "type": "CLIP",
+                "link": 2
+              },
+              {
+                "localized_name": "vae",
+                "name": "vae",
+                "shape": 7,
+                "type": "VAE",
+                "link": 3
+              },
+              {
+                "localized_name": "audio_vae",
+                "name": "audio_vae",
+                "shape": 7,
+                "type": "VAE",
+                "link": 4
+              },
+              {
+                "localized_name": "ref_image_0",
+                "name": "ref_images.ref_image_0",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 26
+              },
+              {
+                "localized_name": "ref_image_1",
+                "name": "ref_images.ref_image_1",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 27
+              },
+              {
+                "localized_name": "ref_image_2",
+                "name": "ref_images.ref_image_2",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 28
+              },
+              {
+                "localized_name": "ref_image_3",
+                "name": "ref_images.ref_image_3",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 29
+              },
+              {
+                "localized_name": "ref_image_4",
+                "name": "ref_images.ref_image_4",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 30
+              },
+              {
+                "localized_name": "ref_image_5",
+                "name": "ref_images.ref_image_5",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 31
+              },
+              {
+                "localized_name": "ref_image_6",
+                "name": "ref_images.ref_image_6",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 32
+              },
+              {
+                "localized_name": "ref_image_7",
+                "name": "ref_images.ref_image_7",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 33
+              },
+              {
+                "localized_name": "ref_image_8",
+                "name": "ref_images.ref_image_8",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": 34
+              },
+              {
+                "localized_name": "ref_video_0",
+                "name": "ref_videos.ref_video_0",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": null
+              },
+              {
+                "localized_name": "ref_video_audio_0",
+                "name": "ref_video_audios.ref_video_audio_0",
+                "shape": 7,
+                "type": "AUDIO",
+                "link": null
+              },
+              {
+                "localized_name": "ref_audio_0",
+                "name": "ref_audios.ref_audio_0",
+                "shape": 7,
+                "type": "AUDIO",
+                "link": 35
+              },
+              {
+                "localized_name": "ref_audio_1",
+                "name": "ref_audios.ref_audio_1",
+                "shape": 7,
+                "type": "AUDIO",
+                "link": 36
+              },
+              {
+                "localized_name": "ref_audio_2",
+                "name": "ref_audios.ref_audio_2",
+                "shape": 7,
+                "type": "AUDIO",
+                "link": 37
+              },
+              {
+                "localized_name": "prompt",
+                "name": "prompt",
+                "type": "STRING",
+                "widget": {
+                  "name": "prompt"
+                },
+                "link": 41
+              },
+              {
+                "localized_name": "width",
+                "name": "width",
+                "type": "INT",
+                "widget": {
+                  "name": "width"
+                },
+                "link": 38
+              },
+              {
+                "localized_name": "height",
+                "name": "height",
+                "type": "INT",
+                "widget": {
+                  "name": "height"
+                },
+                "link": 39
+              },
+              {
+                "localized_name": "length",
+                "name": "length",
+                "type": "INT",
+                "widget": {
+                  "name": "length"
+                },
+                "link": 40
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "positive",
+                "name": "positive",
+                "type": "CONDITIONING",
+                "links": [
+                  6
+                ]
+              },
+              {
+                "localized_name": "LATENT",
+                "name": "LATENT",
+                "type": "LATENT",
+                "links": [
+                  10
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "MiniMaxH3ReferenceToVideo"
+            },
+            "widgets_values": [
+              "A chef in a busy restaurant kitchen tosses vegetables in a flaming wok, slides them onto a plate, and calls out <d>[English] Order up, table six!</d> Sizzling, clattering pans.",
+              960,
+              544,
+              124,
+              "match"
+            ],
+            "widgets_values_named": {
+              "prompt": "A chef in a busy restaurant kitchen tosses vegetables in a flaming wok, slides them onto a plate, and calls out <d>[English] Order up, table six!</d> Sizzling, clattering pans.",
+              "width": 960,
+              "height": 544,
+              "length": 124,
+              "ref_image_size": "match"
+            }
+          },
+          {
+            "id": "video_vae",
+            "type": "VAELoader",
+            "pos": [
+              100,
+              554
+            ],
+            "size": [
+              270,
+              58
+            ],
+            "flags": {},
+            "order": 4,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "vae_name",
+                "name": "vae_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "vae_name"
+                },
+                "link": 21
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "VAE",
+                "name": "VAE",
+                "type": "VAE",
+                "links": [
+                  3,
+                  12
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "VAELoader"
+            },
+            "widgets_values": [
+              "minimax_h3_video_vae_fp16.safetensors"
+            ],
+            "widgets_values_named": {
+              "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+            }
+          },
+          {
+            "id": "guider",
+            "type": "BasicGuider",
+            "pos": [
+              970,
+              130
+            ],
+            "size": [
+              159.568359375,
+              46
+            ],
+            "flags": {},
+            "order": 5,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "link": 5
+              },
+              {
+                "localized_name": "conditioning",
+                "name": "conditioning",
+                "type": "CONDITIONING",
+                "link": 6
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "GUIDER",
+                "name": "GUIDER",
+                "type": "GUIDER",
+                "links": [
+                  8
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "BasicGuider"
+            }
+          },
+          {
+            "id": "audio_vae",
+            "type": "VAELoader",
+            "pos": [
+              100,
+              742
+            ],
+            "size": [
+              270,
+              58
+            ],
+            "flags": {},
+            "order": 6,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "vae_name",
+                "name": "vae_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "vae_name"
+                },
+                "link": 22
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "VAE",
+                "name": "VAE",
+                "type": "VAE",
+                "links": [
+                  4,
+                  14
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "VAELoader"
+            },
+            "widgets_values": [
+              "minimax_h3_audio_vae_fp32.safetensors"
+            ],
+            "widgets_values_named": {
+              "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+            }
+          },
+          {
+            "id": "sample",
+            "type": "SamplerCustomAdvanced",
+            "pos": [
+              1229.568359375,
+              130
+            ],
+            "size": [
+              212.3638671875,
+              106
+            ],
+            "flags": {},
+            "order": 7,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "noise",
+                "name": "noise",
+                "type": "NOISE",
+                "link": 7
+              },
+              {
+                "localized_name": "guider",
+                "name": "guider",
+                "type": "GUIDER",
+                "link": 8
+              },
+              {
+                "localized_name": "sampler",
+                "name": "sampler",
+                "type": "SAMPLER",
+                "link": 9
+              },
+              {
+                "localized_name": "sigmas",
+                "name": "sigmas",
+                "type": "SIGMAS",
+                "link": 42
+              },
+              {
+                "localized_name": "latent_image",
+                "name": "latent_image",
+                "type": "LATENT",
+                "link": 10
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "output",
+                "name": "output",
+                "type": "LATENT",
+                "links": [
+                  11,
+                  13
+                ]
+              },
+              {
+                "localized_name": "denoised_output",
+                "name": "denoised_output",
+                "type": "LATENT",
+                "links": null
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "SamplerCustomAdvanced"
+            }
+          },
+          {
+            "id": "noise",
+            "type": "RandomNoise",
+            "pos": [
+              100,
+              930
+            ],
+            "size": [
+              270,
+              82
+            ],
+            "flags": {},
+            "order": 8,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "noise_seed",
+                "name": "noise_seed",
+                "type": "INT",
+                "widget": {
+                  "name": "noise_seed"
+                },
+                "link": 23
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "NOISE",
+                "name": "NOISE",
+                "type": "NOISE",
+                "links": [
+                  7
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "RandomNoise"
+            },
+            "widgets_values": [
+              42,
+              "randomize"
+            ],
+            "widgets_values_named": {
+              "noise_seed": 42,
+              "control_after_generate": "randomize"
+            }
+          },
+          {
+            "id": "decode_video",
+            "type": "VAEDecode",
+            "pos": [
+              1541.9322265625,
+              130
+            ],
+            "size": [
+              140,
+              46
+            ],
+            "flags": {},
+            "order": 9,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "samples",
+                "name": "samples",
+                "type": "LATENT",
+                "link": 11
+              },
+              {
+                "localized_name": "vae",
+                "name": "vae",
+                "type": "VAE",
+                "link": 12
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "IMAGE",
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": [
+                  15
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "VAEDecode"
+            }
+          },
+          {
+            "id": "decode_audio",
+            "type": "VAEDecodeAudio",
+            "pos": [
+              1541.9322265625,
+              306
+            ],
+            "size": [
+              164.2388671875,
+              46
+            ],
+            "flags": {},
+            "order": 10,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "samples",
+                "name": "samples",
+                "type": "LATENT",
+                "link": 13
+              },
+              {
+                "localized_name": "vae",
+                "name": "vae",
+                "type": "VAE",
+                "link": 14
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "AUDIO",
+                "name": "AUDIO",
+                "type": "AUDIO",
+                "links": [
+                  16
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "VAEDecodeAudio"
+            }
+          },
+          {
+            "id": "sampler_select",
+            "type": "KSamplerSelect",
+            "pos": [
+              100,
+              1142
+            ],
+            "size": [
+              270,
+              58
+            ],
+            "flags": {},
+            "order": 11,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "sampler_name",
+                "name": "sampler_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "sampler_name"
+                },
+                "link": 24
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "SAMPLER",
+                "name": "SAMPLER",
+                "type": "SAMPLER",
+                "links": [
+                  9
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "KSamplerSelect"
+            },
+            "widgets_values": [
+              "euler"
+            ],
+            "widgets_values_named": {
+              "sampler_name": "euler"
+            }
+          },
+          {
+            "id": "create_video",
+            "type": "CreateVideo",
+            "pos": [
+              1806.1710937500002,
+              130
+            ],
+            "size": [
+              270,
+              150
+            ],
+            "flags": {},
+            "order": 12,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "images",
+                "name": "images",
+                "type": "IMAGE",
+                "link": 15
+              },
+              {
+                "localized_name": "audio",
+                "name": "audio",
+                "shape": 7,
+                "type": "AUDIO",
+                "link": 16
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "VIDEO",
+                "name": "VIDEO",
+                "type": "VIDEO",
+                "links": [
+                  17
+                ]
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "CreateVideo"
+            },
+            "widgets_values": [
+              24,
+              "auto",
+              "sRGB",
+              "none"
+            ],
+            "widgets_values_named": {
+              "fps": 24,
+              "bit_depth": "auto",
+              "color_space": "sRGB",
+              "codec": "none"
+            }
+          }
+        ],
+        "groups": [],
+        "links": [
+          {
+            "id": 5,
+            "origin_id": "unet",
+            "origin_slot": 0,
+            "target_id": "guider",
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 6,
+            "origin_id": "conditioning",
+            "origin_slot": 0,
+            "target_id": "guider",
+            "target_slot": 1,
+            "type": "CONDITIONING"
+          },
+          {
+            "id": 7,
+            "origin_id": "noise",
+            "origin_slot": 0,
+            "target_id": "sample",
+            "target_slot": 0,
+            "type": "NOISE"
+          },
+          {
+            "id": 8,
+            "origin_id": "guider",
+            "origin_slot": 0,
+            "target_id": "sample",
+            "target_slot": 1,
+            "type": "GUIDER"
+          },
+          {
+            "id": 9,
+            "origin_id": "sampler_select",
+            "origin_slot": 0,
+            "target_id": "sample",
+            "target_slot": 2,
+            "type": "SAMPLER"
+          },
+          {
+            "id": 10,
+            "origin_id": "conditioning",
+            "origin_slot": 1,
+            "target_id": "sample",
+            "target_slot": 4,
+            "type": "LATENT"
+          },
+          {
+            "id": 11,
+            "origin_id": "sample",
+            "origin_slot": 0,
+            "target_id": "decode_video",
+            "target_slot": 0,
+            "type": "LATENT"
+          },
+          {
+            "id": 12,
+            "origin_id": "video_vae",
+            "origin_slot": 0,
+            "target_id": "decode_video",
+            "target_slot": 1,
+            "type": "VAE"
+          },
+          {
+            "id": 13,
+            "origin_id": "sample",
+            "origin_slot": 0,
+            "target_id": "decode_audio",
+            "target_slot": 0,
+            "type": "LATENT"
+          },
+          {
+            "id": 14,
+            "origin_id": "audio_vae",
+            "origin_slot": 0,
+            "target_id": "decode_audio",
+            "target_slot": 1,
+            "type": "VAE"
+          },
+          {
+            "id": 15,
+            "origin_id": "decode_video",
+            "origin_slot": 0,
+            "target_id": "create_video",
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 16,
+            "origin_id": "decode_audio",
+            "origin_slot": 0,
+            "target_id": "create_video",
+            "target_slot": 1,
+            "type": "AUDIO"
+          },
+          {
+            "id": 17,
+            "origin_id": "create_video",
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 0,
+            "type": "VIDEO"
+          },
+          {
+            "id": 19,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": "unet",
+            "target_slot": 0,
+            "type": "COMBO"
+          },
+          {
+            "id": 20,
+            "origin_id": -10,
+            "origin_slot": 1,
+            "target_id": "clip",
+            "target_slot": 0,
+            "type": "COMBO"
+          },
+          {
+            "id": 21,
+            "origin_id": -10,
+            "origin_slot": 2,
+            "target_id": "video_vae",
+            "target_slot": 0,
+            "type": "COMBO"
+          },
+          {
+            "id": 22,
+            "origin_id": -10,
+            "origin_slot": 3,
+            "target_id": "audio_vae",
+            "target_slot": 0,
+            "type": "COMBO"
+          },
+          {
+            "id": 23,
+            "origin_id": -10,
+            "origin_slot": 4,
+            "target_id": "noise",
+            "target_slot": 0,
+            "type": "INT"
+          },
+          {
+            "id": 24,
+            "origin_id": -10,
+            "origin_slot": 5,
+            "target_id": "sampler_select",
+            "target_slot": 0,
+            "type": "COMBO"
+          },
+          {
+            "id": 25,
+            "origin_id": -10,
+            "origin_slot": 6,
+            "target_id": "sigmas",
+            "target_slot": 1,
+            "type": "INT"
+          },
+          {
+            "id": 2,
+            "origin_id": "clip",
+            "origin_slot": 0,
+            "target_id": "conditioning",
+            "target_slot": 0,
+            "type": "CLIP"
+          },
+          {
+            "id": 3,
+            "origin_id": "video_vae",
+            "origin_slot": 0,
+            "target_id": "conditioning",
+            "target_slot": 1,
+            "type": "VAE"
+          },
+          {
+            "id": 4,
+            "origin_id": "audio_vae",
+            "origin_slot": 0,
+            "target_id": "conditioning",
+            "target_slot": 2,
+            "type": "VAE"
+          },
+          {
+            "id": 26,
+            "origin_id": -10,
+            "origin_slot": 7,
+            "target_id": "conditioning",
+            "target_slot": 3,
+            "type": "IMAGE"
+          },
+          {
+            "id": 27,
+            "origin_id": -10,
+            "origin_slot": 8,
+            "target_id": "conditioning",
+            "target_slot": 4,
+            "type": "IMAGE"
+          },
+          {
+            "id": 28,
+            "origin_id": -10,
+            "origin_slot": 9,
+            "target_id": "conditioning",
+            "target_slot": 5,
+            "type": "IMAGE"
+          },
+          {
+            "id": 29,
+            "origin_id": -10,
+            "origin_slot": 10,
+            "target_id": "conditioning",
+            "target_slot": 6,
+            "type": "IMAGE"
+          },
+          {
+            "id": 30,
+            "origin_id": -10,
+            "origin_slot": 11,
+            "target_id": "conditioning",
+            "target_slot": 7,
+            "type": "IMAGE"
+          },
+          {
+            "id": 31,
+            "origin_id": -10,
+            "origin_slot": 12,
+            "target_id": "conditioning",
+            "target_slot": 8,
+            "type": "IMAGE"
+          },
+          {
+            "id": 32,
+            "origin_id": -10,
+            "origin_slot": 13,
+            "target_id": "conditioning",
+            "target_slot": 9,
+            "type": "IMAGE"
+          },
+          {
+            "id": 33,
+            "origin_id": -10,
+            "origin_slot": 14,
+            "target_id": "conditioning",
+            "target_slot": 10,
+            "type": "IMAGE"
+          },
+          {
+            "id": 34,
+            "origin_id": -10,
+            "origin_slot": 15,
+            "target_id": "conditioning",
+            "target_slot": 11,
+            "type": "IMAGE"
+          },
+          {
+            "id": 35,
+            "origin_id": -10,
+            "origin_slot": 16,
+            "target_id": "conditioning",
+            "target_slot": 14,
+            "type": "AUDIO"
+          },
+          {
+            "id": 36,
+            "origin_id": -10,
+            "origin_slot": 17,
+            "target_id": "conditioning",
+            "target_slot": 15,
+            "type": "AUDIO"
+          },
+          {
+            "id": 37,
+            "origin_id": -10,
+            "origin_slot": 18,
+            "target_id": "conditioning",
+            "target_slot": 16,
+            "type": "AUDIO"
+          },
+          {
+            "id": 38,
+            "origin_id": -10,
+            "origin_slot": 19,
+            "target_id": "conditioning",
+            "target_slot": 18,
+            "type": "INT"
+          },
+          {
+            "id": 39,
+            "origin_id": -10,
+            "origin_slot": 20,
+            "target_id": "conditioning",
+            "target_slot": 19,
+            "type": "INT"
+          },
+          {
+            "id": 40,
+            "origin_id": -10,
+            "origin_slot": 21,
+            "target_id": "conditioning",
+            "target_slot": 20,
+            "type": "INT"
+          },
+          {
+            "id": 41,
+            "origin_id": -10,
+            "origin_slot": 22,
+            "target_id": "conditioning",
+            "target_slot": 17,
+            "type": "STRING"
+          },
+          {
+            "id": 42,
+            "origin_id": "sigmas",
+            "origin_slot": 0,
+            "target_id": "sample",
+            "target_slot": 3,
+            "type": "SIGMAS"
+          },
+          {
+            "id": 45,
+            "origin_id": "unet",
+            "origin_slot": 0,
+            "target_id": "sigmas",
+            "target_slot": 0,
+            "type": "MODEL"
+          }
+        ],
+        "extra": {}
+      }
+    ]
+  },
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.7851495448252521,
+      "offset": [
+        -737.087089715405,
+        -18.12366896649978
+      ]
+    },
+    "frontendVersion": "1.55.18",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4,
+  "seed_widgets": {
+    "1": 4
+  }
+}
