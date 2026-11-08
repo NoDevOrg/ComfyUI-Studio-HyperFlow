@@ -131,7 +131,15 @@ def main():
             put(f"{c}.{cn}.weight", get(f"{d}.{dn}.weight"))
     put("token_refiner.final_norm.weight", get("token_refiner.final_norm.weight"))
 
-    # Main blocks.
+    def put_low_rank(d, c, dn):
+        for leaf in ("down", "up"):
+            t = get(f"{d}.{dn}.{leaf}.weight").to(torch.bfloat16)
+            if dn == "ff.net.0.proj" and leaf == "up":
+                t = swap_halves(t)
+            put(f"{c}.{LINEAR[dn]}.{leaf}.weight", pad_rank(t, leaf), True)
+
+    # Main blocks. Each linear is either int8 or a low-rank pair, and a block can mix them (fl2va's block 2 keeps
+    # an int8 fc2, block 49 factors only fc2). q, k and v are always the same kind.
     factorized = 0
     for i in range(config["num_layers"]):
         if i in dropped:
@@ -141,31 +149,31 @@ def main():
             for leaf in ("weight", "bias"):
                 if f"{d}.{dn}.{leaf}" in index:
                     put(f"{c}.{cn}.{leaf}", get(f"{d}.{dn}.{leaf}"))
-        if f"{d}.attn.to_q.qweight" in index:
+        int8 = {dn: f"{d}.{dn}.qweight" in index for dn in LINEAR}
+        if len({int8[f"attn.to_{x}"] for x in "qkv"}) != 1:
+            raise SystemExit(f"{d}: q, k and v are not all int8 or all low-rank")
+        if int8["attn.to_q"]:
             put_int8(f"{c}.attn.qkv_proj", [get(f"{d}.attn.to_{x}.qweight") for x in "qkv"],
                      [get(f"{d}.attn.to_{x}.wscale") for x in "qkv"])
-            for dn, cn in (("attn.to_out.0", "attn.out_proj"), ("ff.net.2", "mlp.fc2")):
-                put_int8(f"{c}.{cn}", [get(f"{d}.{dn}.qweight")], [get(f"{d}.{dn}.wscale")])
+        for dn in ("attn.to_out.0", "ff.net.2"):
+            if int8[dn]:
+                put_int8(f"{c}.{LINEAR[dn]}", [get(f"{d}.{dn}.qweight")], [get(f"{d}.{dn}.wscale")])
+        if int8["ff.net.0.proj"]:
             put_int8(f"{c}.mlp.fc1", [swap_halves(get(f"{d}.ff.net.0.proj.qweight"))],
                      [swap_halves(get(f"{d}.ff.net.0.proj.wscale"))])
-        else:
-            factorized += 1
-            for dn, cn in LINEAR.items():
-                for leaf in ("down", "up"):
-                    t = get(f"{d}.{dn}.{leaf}.weight").to(torch.bfloat16)
-                    if dn == "ff.net.0.proj" and leaf == "up":
-                        t = swap_halves(t)
-                    t = pad_rank(t, leaf)
-                    put(f"{c}.{cn}.{leaf}.weight", t, True)
-        print(f"block {i} -> {c}", flush=True)
+        low = [dn for dn, q in int8.items() if not q]
+        for dn in low:
+            put_low_rank(d, c, dn)
+        factorized += len(low)
+        print(f"block {i} -> {c}" + (f", low-rank: {len(low)} of {len(LINEAR)}" if low else ""), flush=True)
 
     missing = set(ref.tensors) - set(out_sd)
     if missing:
         raise SystemExit(f"in the GGUF but not written: {sorted(missing)[:20]}")
     worst = min(checks, key=lambda x: x[1])
-    print(f"{len(out_sd)} tensors, {factorized} factorized blocks, {len(checks)} checked; "
+    print(f"{len(out_sd)} tensors, {factorized} low-rank linears, {len(checks)} checked; "
           f"worst cosine {worst[1]:.6f} ({worst[0]}), worst rel {max(c[2] for c in checks):.4f}")
-    save_file(out_sd, out, metadata={"hyperflow": json.dumps({"source": "VideoRebirthAI/hyperflow-h3-flash ref2va_int8_convrot",
+    save_file(out_sd, out, metadata={"hyperflow": json.dumps({"source": f"VideoRebirthAI/hyperflow-h3-flash {os.path.basename(os.path.normpath(src))}",
                                                                "dropped_blocks": dropped})})
 
 

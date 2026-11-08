@@ -59,13 +59,20 @@ def load(path):
     if not isinstance(model, patch.PackedModel):
         raise RuntimeError(f"{path} is not a packed video+audio DiT checkpoint")
     ops, dtype = comfy.ops.manual_cast, torch.bfloat16
+    # A block can be partly factorized (fl2va's block 2 keeps a dense int8 fc2, block 49 factors only fc2), so
+    # replace only the linears that have low-rank pairs.
     for i, parts in blocks.items():
         block = model.blocks[i]
-        block.attn.qkv_proj = patch.SplitQKV(*(low_rank(parts, n, dtype, ops, patch) for n in QKV))
-        block.attn.out_proj = low_rank(parts, "attn.out_proj", dtype, ops, patch)
-        block.mlp.fc1 = low_rank(parts, "mlp.fc1", dtype, ops, patch)
-        block.mlp.fc2 = low_rank(parts, "mlp.fc2", dtype, ops, patch)
-        block.mlp.__class__ = patch.FactorizedMLP
+        if any(n in parts for n in QKV):
+            block.attn.qkv_proj = patch.SplitQKV(*(low_rank(parts, n, dtype, ops, patch) for n in QKV))
+        if "attn.out_proj" in parts:
+            block.attn.out_proj = low_rank(parts, "attn.out_proj", dtype, ops, patch)
+        if "mlp.fc1" in parts:
+            block.mlp.fc1 = low_rank(parts, "mlp.fc1", dtype, ops, patch)
+        if "mlp.fc2" in parts:
+            # The stock MLP fuses SwiGLU into an int8 fc2; a low-rank fc2 needs the plain forward.
+            block.mlp.fc2 = low_rank(parts, "mlp.fc2", dtype, ops, patch)
+            block.mlp.__class__ = patch.FactorizedMLP
     hidden, freq_dim = endpoint_sd["proj_in.weight"].shape
     embedder = patch.packed_dit.TimeEmbedder(freq_dim, hidden, endpoint_sd["proj_out.weight"].shape[0],
                                              dtype=torch.float32, device="cpu", operations=ops)
